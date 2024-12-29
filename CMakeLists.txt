@@ -6,7 +6,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(QT_QML_OUTPUT_DIRECTORY  ${CMAKE_BINARY_DIR})
 
-find_package(Qt6 6.4 COMPONENTS Core Quick Qml Gui REQUIRED)
+find_package(Qt6 6.2 COMPONENTS Core Quick Qml Gui REQUIRED)
 
 qt_add_library(QuixFlux STATIC)
 qt_add_qml_module(QuixFlux
