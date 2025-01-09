@@ -21,14 +21,40 @@ QuixFlux is a modern implementation of the Flux Architecture tailored specifical
 #### Prerequisites
 - Qt6 (6.2 or newer recommended)
 
-#### Installation (TO BE CONFIRMED)
+#### Installation
 To include QuixFlux in your project, clone the repository and integrate the module into your Qt project:
 
 ```bash
-git clone https://github.com/yourusername/quixflux.git
+git clone https://github.com/fajar-adianto/quixflux.git
 ```
 
 Add the module path to your `CMakeLists.txt` file.
+```cmake
+add_subdirectory(quixflux)
+```
+
+Or, use `FetchContent` in your `CMakeLists.txt` file.
+
+```cmake
+FetchContent_Declare(
+    quixflux
+    GIT_REPOSITORY "https://github.com/fajar-adianto/quixflux.git"
+    GIT_TAG main
+)
+FetchContent_MakeAvailable(quixflux)
+```
+
+Don't forget to add `target_link_libraries` in your `CMakeLists.txt` file.
+
+```cmake
+...
+target_link_libraries(<TARGET>
+    PRIVATE
+        ...
+        QuixFlux QuixFluxplugin
+        ...
+)
+```
 
 #### Usage
 Import the QuixFlux module into your QML files:
