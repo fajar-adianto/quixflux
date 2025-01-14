@@ -5,8 +5,13 @@ project(QuixFlux VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(QT_QML_OUTPUT_DIRECTORY  ${CMAKE_BINARY_DIR})
+set(QT_QML_GENERATE_QMLLS_INI ON)
 
-find_package(Qt6 6.2 COMPONENTS Core Quick Qml Gui REQUIRED)
+find_package(Qt6 6.8 COMPONENTS Core Quick Qml Gui REQUIRED)
+
+qt_policy(SET QTP0001 NEW)
+qt_policy(SET QTP0004 NEW)
+qt_policy(SET QTP0005 NEW)
 
 qt_add_library(QuixFlux STATIC)
 qt_add_qml_module(QuixFlux
@@ -51,14 +56,3 @@ target_link_libraries(QuixFlux
 target_include_directories(QuixFlux PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 include_directories(private)
-
-# Example Project
-# qt_add_executable(ExampleProject example/example.cpp)
-# qt_add_qml_module(ExampleProject
-#     URI ExampleProjectApp
-#     VERSION 1.0
-#     QML_FILES example/example.qml
-# )
-
-# target_link_libraries(ExampleProject PRIVATE Qt6::Quick QuixFluxplugin)
-# target_compile_definitions(ExampleProject PRIVATE $<$<OR:$<CONFIG:Debug>,$<CONFIG:RelWithDebInfo>>:QT_QML_DEBUG>)
