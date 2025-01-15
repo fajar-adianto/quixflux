@@ -175,7 +175,11 @@ void QxKeyTable::componentComplete()
         }
 
         QVariant v = property(p.name());
-        if (!v.isNull()) {
+        if (!v.isValid()) {
+            continue;
+        }
+
+        if (!v.value<QString>().isEmpty()) {
             continue;
         }
 
