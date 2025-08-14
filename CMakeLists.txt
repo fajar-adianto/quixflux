@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(QT_QML_OUTPUT_DIRECTORY  ${CMAKE_BINARY_DIR})
 set(QT_QML_GENERATE_QMLLS_INI ON)
 
-find_package(Qt6 6.8 COMPONENTS Core Quick Qml Gui REQUIRED)
+find_package(Qt6 COMPONENTS Core Quick Qml Gui REQUIRED)
 
 qt_policy(SET QTP0001 NEW)
 qt_policy(SET QTP0004 NEW)
@@ -56,3 +56,4 @@ target_link_libraries(QuixFlux
 target_include_directories(QuixFlux PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})
 
 include_directories(private)
+
