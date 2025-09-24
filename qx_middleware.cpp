@@ -24,7 +24,7 @@
 
     \code
         // Action Logger
-        import QuickFlux 1.1
+        import QuixFlux 1.1
 
         QxMiddleware {
             function dispatch(type, message) {

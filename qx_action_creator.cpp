@@ -29,7 +29,7 @@
 
     \code
         import QtQuick
-        import QuickFlux
+        import QuixFlux
         pragma singleton
 
         Item {

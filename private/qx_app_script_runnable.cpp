@@ -79,7 +79,7 @@ void QxAppScriptRunnable::setCondition(QJSValue condition)
     } else if (condition.isObject() && condition.hasProperty("connect")) {
         Q_ASSERT(!engine_.isNull());
 
-        QString type = QString("QuickFlux.AppScript.%1").arg(QUuid::createUuid().toString());
+        QString type = QString("QuixFlux.QxAppScript.%1").arg(QUuid::createUuid().toString());
         setType(type);
 
         QString generator = "(function(dispatcher) { return function() {dispatcher.dispatch(arguments)}})";
